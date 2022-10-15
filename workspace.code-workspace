@@ -6,5 +6,32 @@
         {
             "path": "../esn-apps"
         }
-    ]
+    ],
+    "settings": {
+        "restoreTerminals.terminals": [
+            {
+                "splitTerminals": [
+                    {
+                        "name": "gui",
+                        "commands": [
+                            "node zsync.js reverse",
+                            "npm i",
+                            "npm run dev -- --open"
+                        ]
+                    }
+                ]
+            },
+            {
+                "splitTerminals": [
+                    {
+                        "name": "sync",
+                        "shouldRunCommands": false,
+                        "commands": [
+                            "node zsync.js"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 }
