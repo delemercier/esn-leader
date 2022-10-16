@@ -8,6 +8,7 @@
         }
     ],
     "settings": {
+        "terminal.integrated.defaultProfile.windows": "Command Prompt",
         "restoreTerminals.terminals": [
             {
                 "splitTerminals": [
@@ -28,6 +29,17 @@
                         "shouldRunCommands": false,
                         "commands": [
                             "node zsync.js"
+                        ]
+                    }
+                ]
+            },
+            {
+                "splitTerminals": [
+                    {
+                        "name": "prisma studio",
+                        "commands": [
+                            "node_modules\\.bin\\prisma generate",
+                            "node_modules\\.bin\\prisma studio"
                         ]
                     }
                 ]

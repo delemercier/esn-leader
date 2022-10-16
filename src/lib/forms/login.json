@@ -1,0 +1,18 @@
+[
+	{
+		"type": "input",
+		"name": "username",
+		"attributes": {
+			"label": "Username"
+		},
+		"rules": ["required"]
+	},
+	{
+		"type": "input",
+		"name": "password",
+		"attributes": {
+			"label": "Password"
+		},
+		"rules": ["required"]
+	}
+]

@@ -9,12 +9,8 @@ let filesManager = new FilesManager();
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 //const repos = ['apps', 'apps10']
-const repos = fs.readdirSync(`..`).filter(dir => dir !== 'leader');
+const repos = fs.readdirSync(`..`).filter(dir => !dir.includes('leader'));
 const paths = ['src/routes/-', 'src/lib/-', 'tests/-', 'static/-']
-
-function printProgress(progress) {
-    process.stdout.write(progress +'\r');
-}
 
 async function main() {
     while (true) {
@@ -32,7 +28,7 @@ async function main() {
 
                     if (fs.existsSync(source)) {
                         if (!fs.existsSync(target)) fs.mkdirSync(target, { recursive: true })
-                        printProgress(`${new Date().toLocaleString()} - Syncing every ${waiting} seconds`)
+                        process.stdout.write(`${new Date().toLocaleString()} - Syncing repos=${repos} every ${waiting} seconds\r`)
                         filesManager.mirrorDirectory(source, target)
                     }
                 })
